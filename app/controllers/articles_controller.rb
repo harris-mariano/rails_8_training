@@ -1,4 +1,5 @@
 class ArticlesController < ApplicationController
+  before_action :authenticate_user!, except: [ :index ]
   before_action :set_article, only: [ :edit, :update, :show, :destroy ]
 
   def index
@@ -10,10 +11,10 @@ class ArticlesController < ApplicationController
   end
 
   def create
-    @article = Article.new(article_params)
+    @article = current_user.articles.new(article_params)
 
     if @article.save
-      redirect_to @article
+      redirect_to @article, notice: "Article was successfully created."
     else
       render :new, status: :unprocessable_entity
     end

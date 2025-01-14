@@ -3,7 +3,7 @@
 <ul class="list-group">
   <% @articles.each do |article| %>
     <li class="list-group-item">
-      <%= link_to article.title, article %>
+      <%= link_to "#{article.title} - #{article.user.first_name} #{article.user.last_name}", article %>
     </li>
   <% end %>
 </ul>

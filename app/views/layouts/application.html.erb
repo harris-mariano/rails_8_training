@@ -42,8 +42,20 @@
 
           <%= form_with url: "#", method: :get, class: "d-flex" do %>
             <%= search_field_tag :q, nil, class: "form-control me-2", placeholder: "Search", aria: { label: "Search" } %>
-            <%= submit_tag "Search", class: "btn btn-outline-success" %>
+            <%= submit_tag "Search", class: "btn btn-outline-success me-5" %>
           <% end %>
+
+            <ul class="navbar-nav justify-content-end mb-2 mb-lg-0">
+              <% if user_signed_in? %>
+                <li class="nav-item">
+                  <%= button_to "Logout", destroy_user_session_path, method: :delete, class: "btn btn-outline-danger" %>
+                </li>
+              <%else%>
+                <li class="nav-item">
+                  <%= link_to "Login", new_user_session_path, class: "btn btn-outline-primary" %>
+                </li>
+              <%end%>
+            </ul>
         </div>
       </div>
     </nav>
