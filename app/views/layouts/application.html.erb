@@ -40,9 +40,9 @@
             </li>
           </ul>
 
-          <%= form_with url: "#", method: :get, class: "d-flex" do %>
-            <%= search_field_tag :q, nil, class: "form-control me-2", placeholder: "Search", aria: { label: "Search" } %>
-            <%= submit_tag "Search", class: "btn btn-outline-success me-5" %>
+          <%= search_form_for @q, class: "d-flex" do |f| %>
+            <%= f.search_field :title_or_user_first_name_or_user_last_name_cont, class: "form-control me-2", placeholder: "Search", aria: { label: "Search" } %>
+            <%= f.submit "Search", class: "btn btn-outline-success me-5" %>
           <% end %>
 
             <ul class="navbar-nav justify-content-end mb-2 mb-lg-0">

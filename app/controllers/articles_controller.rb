@@ -3,7 +3,10 @@ class ArticlesController < ApplicationController
   before_action :set_article, only: [ :edit, :update, :show, :destroy ]
 
   def index
-    @articles = Article.all
+    # @articles = Article.all
+
+    @q = Article.ransack(params[:q])
+    @articles = @q.result.includes(:user)
   end
 
   def new

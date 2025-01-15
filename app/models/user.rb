@@ -6,4 +6,8 @@ class User < ApplicationRecord
 
   has_many :articles, dependent: :destroy
   has_many :comments, dependent: :destroy
+
+  def self.ransackable_attributes(auth_object = nil)
+    [ "first_name", "last_name" ]
+  end
 end
