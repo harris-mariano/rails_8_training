@@ -1,5 +1,5 @@
 <p>
-  <strong>Commenter:</strong>
+  <strong>User:</strong>
   <%= "#{comment.user.first_name} #{comment.user.last_name}" %>
 </p>
 
@@ -12,5 +12,5 @@
   <%= link_to "Delete Comment", [comment.article, comment], data: {
                 turbo_method: :delete,
                 turbo_confirm: "Are you sure?"
-              } %>
+              }, class: "btn btn-danger" %>
 </p>

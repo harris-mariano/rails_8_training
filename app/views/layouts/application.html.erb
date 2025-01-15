@@ -39,12 +39,6 @@
               <%= link_to "New Article", new_article_path, class: "nav-link" %>
             </li>
           </ul>
-
-          <%= search_form_for @q, class: "d-flex" do |f| %>
-            <%= f.search_field :title_or_user_first_name_or_user_last_name_cont, class: "form-control me-2", placeholder: "Search", aria: { label: "Search" } %>
-            <%= f.submit "Search", class: "btn btn-outline-success me-5" %>
-          <% end %>
-
             <ul class="navbar-nav justify-content-end mb-2 mb-lg-0">
               <% if user_signed_in? %>
                 <li class="nav-item">
