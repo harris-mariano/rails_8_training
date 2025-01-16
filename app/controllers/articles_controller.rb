@@ -6,7 +6,7 @@ class ArticlesController < ApplicationController
     # @articles = Article.all
 
     @q = Article.ransack(params[:q])
-    @articles = @q.result.includes(:user, :comments).page(params[:page]).per(10)
+    @articles = @q.result.includes(:user).page(params[:page]).per(10)
   end
 
   def new
