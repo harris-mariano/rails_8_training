@@ -68,6 +68,6 @@ gem "dartsass-rails", "~> 0.5.1"
 gem "jquery-rails"
 
 gem "devise", "~> 4.9", ">= 4.9.4"
-gem "ransack", "~> 4.2", ">= 4.2.1"
+gem "ransack", "~> 4.3"
 gem "faker", "~> 3.5", ">= 3.5.1"
 gem "kaminari", "~> 1.2", ">= 1.2.2"
